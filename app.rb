@@ -22,7 +22,7 @@ configure do
 end
 
 get '/'do
-  erb "Hello World!"
+  erb :index
 end
 
 get '/new' do
