@@ -32,6 +32,12 @@ get '/new' do
   erb :new
 end
 
+get '/details/:post_id' do
+  post_id = params[:post_id]
+
+  erb "Displaying information for podt with id #{post_id}"
+end
+
 # === POST ===
 
 post '/new' do
