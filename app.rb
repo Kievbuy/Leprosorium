@@ -66,7 +66,8 @@ end
 post '/details/:post_id' do
   post_id = params[:post_id]
 
-  results = @db.execute 'select * from Posts where id = ?', [post_id]
+  content = params[:content]
 
-  erb :details
+  erb "You typed comment #{content} for post #{post_id}"
+
 end
