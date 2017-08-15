@@ -47,7 +47,7 @@ get '/details/:post_id' do
 
   # comments for this post
 
-  @comments = @db.execute 'select * fom Comments where post_id = ? order by id', [post_id]
+  @comments = @db.execute 'select * from Comments where post_id = ? order by id desc', [post_id]
 
   erb :details
 end
