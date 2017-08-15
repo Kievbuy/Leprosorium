@@ -23,7 +23,7 @@ configure do
   `id`	INTEGER PRIMARY KEY AUTOINCREMENT,
   `created_date`	TEXT,
   `content`	TEXT,
-  'post_id' INTEGER
+  `post_id` INTEGER
   );'
 end
 
@@ -66,7 +66,7 @@ end
 post '/details/:post_id' do
   post_id = params[:post_id]
 
-  content = params[:content]
+  results = @db.execute 'select * from Posts where id = ?', [post_id]
 
-  erb "You typed comment #{content} for post #{post_id}"
+  erb :details
 end
